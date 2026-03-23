@@ -189,8 +189,13 @@ html { scroll-behavior: smooth; }
     background: linear-gradient(to right, rgba(17,24,39,0.95) 0%, rgba(17,24,39,0.7) 50%, rgba(17,24,39,0.2) 100%);
 }
 
+@keyframes heroFadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .hero-container { position: relative; z-index: 50; display: flex; flex-direction: column; justify-content: center; height: 100%; pointer-events: none; }
-.hero-content { max-width: 650px; padding: 2rem 0; pointer-events: auto; position: relative; z-index: 100; }
+.hero-content { max-width: 650px; padding: 2rem 0; pointer-events: auto; position: relative; z-index: 100; animation: heroFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
 
 .hero-badge {
     display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--primary-light);
@@ -226,15 +231,15 @@ html { scroll-behavior: smooth; }
 }
 
 /* Section Headers */
-.section-header { margin-bottom: 3.5rem; }
-.section-title { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; font-family: 'Playfair Display', serif; font-weight: 800; color: var(--secondary); }
-.title-underline { width: 60px; height: 4px; background-color: var(--primary); margin: 0 auto; border-radius: 2px; }
+.section-header { margin-bottom: 4rem; }
+.section-title { font-size: 3rem; margin-bottom: 1rem; letter-spacing: -0.02em; font-family: 'Playfair Display', serif; font-weight: 900; color: var(--secondary); line-height: 1.1; }
+.title-underline { width: 80px; height: 4px; background-color: var(--primary); margin: 0 auto; border-radius: 2px; }
 .section-badge {
-    display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--primary);
-    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; font-family: 'Inter', sans-serif;
+    display: inline-block; font-size: 0.85rem; font-weight: 700; color: var(--primary);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem; font-family: 'Inter', sans-serif;
 }
 .badge-dark { color: #9ca3af; }
-.section-subtitle { font-size: 1.125rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; font-family: 'Inter', sans-serif; }
+.section-subtitle { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; font-family: 'Inter', sans-serif; }
 
 /* Grid Layouts */
 .cards-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
